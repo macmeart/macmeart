@@ -3,6 +3,7 @@
 *::before {
     margin: 0;
     box-sizing: border-box;
+    scrollbar-width: thin;
 }
 
 :root {
@@ -35,6 +36,10 @@ header {
     box-shadow: 0 2px 5px rgb(70, 70, 70);
 }
 
+header>span {
+    cursor: pointer;
+}
+
 #instagram {
     height: 100%;
     aspect-ratio: 1 / 1;
@@ -61,6 +66,7 @@ header {
 
 section.intro-page {
     height: calc(100vh - var(--header-height));
+    scroll-margin-top: var(--header-height);
     width: 100%;
     overflow: hidden;
     display: flex;

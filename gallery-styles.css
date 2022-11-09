@@ -11,6 +11,8 @@
 .gallery.title>span {
     padding-left: 10px;
     border: 2px solid var(--pink-first);
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
 
 section.gallery {
@@ -74,7 +76,8 @@ section.gallery {
     top: 66%;
 }
 
-.picture.appear {
+.picture.appear,
+.gallery.title>span.appear {
     opacity: 1;
 }
 

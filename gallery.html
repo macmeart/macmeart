@@ -18,9 +18,9 @@
     <a id="freccia" onclick="this.classList.remove('show')" class="popup freccia hidden" href="#gallery"></a>
     <header>
         <a id="instagram" href="https://www.instagram.com/macmeart"><img src="Instagram_logo_2016.png" alt=""></a>
-        <span>MACMEART</span>
+        <span onclick="window.location.hash = 'intro-page'">MACMEART</span>
     </header>
-    <section class="intro-page">
+    <section id="intro-page" class="intro-page">
         <section class="intro__info">
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus ex
                 consequuntur veniam? Voluptas asperiores, qui animi necessitatibus nihil pariatur aliquid? Sunt eius vel
@@ -54,6 +54,17 @@
     <section id="contact" class="contact">
         <span class="email">macmeart@artist.art</span>
     </section>
+
+    <div class="picture-modal" onclick="this.classList.remove('appear-modal');event.stopPropagation();">
+        <div class="picture-modal__picture-container">
+            <img class="big-picture" src="" alt="">
+        </div>
+        <div class="picture-modal__description picture-modal__info" onclick="event.stopPropagation()">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis neque sit harum aperiam, provident quia
+                doloremque praesentium quaerat! Quod in deleniti, laboriosam eligendi suscipit numquam aut culpa quas.
+                Animi, eligendi?</p>
+        </div>
+    </div>
 </body>
 
 </html>

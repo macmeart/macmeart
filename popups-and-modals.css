@@ -23,10 +23,11 @@
     width: 30%;
     top: 30%;
     left: 35%;
-    transform: rotateZ(-45deg);
+    transform: rotateZ(-45deg) translateX(15%) translateY(-15%);
     border-left: 2px solid black;
     border-bottom: 2px solid black;
     animation: 2s updown infinite ease-in-out;
+    animation-delay: 6000ms;
 }
 
 .popup.freccia.show {
@@ -47,4 +48,61 @@
     to {
         transform: rotateZ(-45deg) translateX(15%) translateY(-15%);
     }
+}
+
+
+
+.picture-modal {
+    visibility: hidden;
+    opacity: 0;
+    z-index: -1;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    transition: all 1s ease-in;
+    display: flex;
+}
+
+.picture-modal.appear-modal {
+    opacity: 1;
+    visibility: visible;
+    z-index: 999;
+    backdrop-filter: blur(3px);
+}
+
+.picture-modal>.picture-modal__picture-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3vw;
+    flex-basis: 0;
+    flex-grow: 3;
+    flex-shrink: 2;
+    min-width: 0;
+}
+
+.picture-modal__picture-container>img {
+    object-fit: scale-down;
+    min-width: 0;
+}
+
+.picture-modal>.picture-modal__description {
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+    background-color: whitesmoke;
+}
+
+.picture-modal__info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+}
+
+.picture-modal__info>p {
+    font-size: 1.3em;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.5em;
+    vertical-align: middle;
 }
