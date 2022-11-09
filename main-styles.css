@@ -1,0 +1,124 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --header-height: 60px;
+    --pink-first: #bd7c95;
+}
+
+body {
+    scroll-behavior: smooth;
+    overflow: auto;
+    position: relative;
+    background-color: black;
+    /*box-shadow: 10px 50px 100px inset rgba(255, 255, 255, 0.2);*/
+}
+
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: var(--header-height);
+    line-height: var(--header-height);
+    background-color: black;
+    color: white;
+    vertical-align: middle;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 550;
+    letter-spacing: 10px;
+    z-index: 99;
+    box-shadow: 0 2px 5px rgb(70, 70, 70);
+}
+
+#instagram {
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+    color: white;
+}
+
+#instagram>img {
+    height: 50%;
+    width: 50%;
+    object-fit: scale-down;
+    filter: grayscale(.5);
+}
+
+#instagram>img:hover {
+    filter: grayscale(0);
+}
+
+section.intro-page {
+    height: calc(100vh - var(--header-height));
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+}
+
+.intro-page>section {
+    display: inline-flex;
+    width: 50%;
+    height: 100%;
+}
+
+.intro__info {
+    color: white;
+    background-color: transparent;
+    padding: 10%;
+    justify-content: center;
+    align-content: center;
+}
+
+.intro__info>p {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 400;
+    font-size: 1.5em;
+    letter-spacing: 2px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
+    opacity: 0;
+    transform: translateX(-10vh);
+    animation: 1.5s slidein ease-in-out forwards;
+}
+
+.intro__picture-container {
+    overflow: hidden;
+}
+
+.intro__picture-container>img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    animation: 1.5s land ease-in-out forwards;
+}
+
+@keyframes land {
+    from {
+        opacity: .5;
+        transform: scale(1.1);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+}
+
+@keyframes slidein {
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

@@ -1,0 +1,104 @@
+.gallery.title {
+    color: var(--pink-first);
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 10px;
+    font-weight: 300;
+    font-size: 2.5em;
+    padding: 20vh 0 20vh 0;
+}
+
+.gallery.title>span {
+    padding-left: 10px;
+    border: 2px solid var(--pink-first);
+}
+
+section.gallery {
+    scroll-margin-top: calc(var(--header-height) + 20vh + 2.5em + 20px);
+    display: grid;
+    width: 100%;
+    padding: 0 2.5vw;
+    grid-template-columns: repeat(5, calc(95vw / 5));
+    grid-auto-rows: calc(95vw / 5);
+    /*justify-items: stretch;
+    align-items: stretch;
+    justify-content: space-evenly;
+    align-content: space-evenly;*/
+}
+
+.picture-container {
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery .picture {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: all .5s ease-in-out, opacity 4s ease-in-out;
+}
+
+.picture:hover {
+    cursor: pointer;
+    transform: scale(1.3);
+    filter: grayscale(1);
+}
+
+.picture-container:hover::before,
+.picture-container:hover::after {
+    font-family: 'Times New Roman', Times, serif;
+    pointer-events: none;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    z-index: 9;
+    color: white;
+    text-shadow: 2px 2px 3px black;
+    font-size: 2em;
+    font-weight: bold;
+    left: 0;
+    position: absolute;
+    transform: translateY(-50%);
+    overflow-wrap: break-word;
+}
+
+.picture-container:hover::before {
+    content: attr(data-descrizione);
+    top: 33%;
+}
+
+.picture-container:hover::after {
+    content: attr(data-misure);
+    top: 66%;
+}
+
+.picture.appear {
+    opacity: 1;
+}
+
+.picture-container.one {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+}
+
+.picture-container.two {
+    grid-column: 4 / 6;
+    grid-row: 1 / 2;
+}
+
+.picture-container.three {
+    grid-column: 3 / 5;
+    grid-row: 3 / 5;
+}
+
+.picture-container.four {
+    grid-column: 5 / 6;
+    grid-row: 5 / 6;
+}
+
+.picture-container.five {
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+}

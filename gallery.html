@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MACMEART</title>
+
+    <link rel="stylesheet" href="main-styles.css">
+    <link rel="stylesheet" href="gallery-styles.css">
+    <link rel="stylesheet" href="popups-and-modals.css">
+    <link rel="stylesheet" href="contact.css">
+    <script src="gallery.js"></script>
+</head>
+
+<body>
+    <a id="freccia" onclick="this.classList.remove('show')" class="popup freccia hidden" href="#gallery"></a>
+    <header>
+        <a id="instagram" href="https://www.instagram.com/macmeart"><img src="Instagram_logo_2016.png" alt=""></a>
+        <span>MACMEART</span>
+    </header>
+    <section class="intro-page">
+        <section class="intro__info">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus ex
+                consequuntur veniam? Voluptas asperiores, qui animi necessitatibus nihil pariatur aliquid? Sunt eius vel
+                ullam suscipit
+                qui recusandae doloribus aperiam. Earum.</p>
+        </section>
+        <section class="intro__picture-container">
+            <img src="profile.jpg" alt="">
+        </section>
+    </section>
+    <h1 id="gallery-title" class="gallery title"><span>GALLERY</span></h1>
+    <section id="gallery" class="gallery">
+        <div class="picture-container one" data-descrizione="descrizione" data-misure="100 x 100">
+            <img src="picture_1.jpg" alt="" class="picture one">
+        </div>
+        <div class="picture-container two" data-descrizione="descrizione" data-misure="100 x 100">
+            <img src="picture_2.jpg" alt="" class="picture two">
+        </div>
+        <div class="picture-container three" data-descrizione="descrizione" data-misure="100 x 100">
+            <img src="picture_3.jpg" alt="" class="picture three" data-descrizione="descrizione"
+                data-misure="100 x 100">
+        </div>
+        <div class="picture-container four" data-descrizione="descrizione" data-misure="100 x 100">
+            <img src="picture_4.jpg" alt="" class="picture four">
+        </div>
+        <div class="picture-container five" data-descrizione="descrizione" data-misure="100 x 100">
+            <img src="picture_5.jpg" alt="" class="picture five">
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <span class="email">macmeart@artist.art</span>
+    </section>
+</body>
+
+</html>
