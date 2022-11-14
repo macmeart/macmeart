@@ -80,6 +80,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     bigPicture = document.querySelector(".big-picture");
     const modalPicture = document.querySelector('.picture-modal');
+    const modalPictureContainer = document.querySelector('.picture-modal__picture-container');
     const modalPictureDescription = document.querySelector('.picture-modal p');
     let galleryPictures = document.querySelectorAll('.gallery .picture-container');
     galleryPictures.forEach((picContainer) => {
@@ -110,13 +111,13 @@ window.addEventListener('DOMContentLoaded', () => {
 
     //swipe functionality of picture modal 
 
-    modalPicture.addEventListener('touchstart', (event) => {
+    modalPictureContainer.addEventListener('touchstart', (event) => {
         swipex = event.touches[0].clientX;
     });
-    modalPicture.addEventListener('touchmove', (event) => {
+    modalPictureContainer.addEventListener('touchmove', (event) => {
         swipextemp = event.touches[event.touches.length - 1]?.clientX;
     });
-    modalPicture.addEventListener('touchend', (event) => {
+    modalPictureContainer.addEventListener('touchend', (event) => {
         let keydown = new Event('keydown', { bubbles: true });
         if (swipex - swipextemp < -80) {
             keydown.key = 'ArrowLeft';

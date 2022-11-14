@@ -25,6 +25,10 @@
         transition: all .5s ease-in;
     }
 
+    .picture-modal__info {
+        margin: 2.5%;
+    }
+
     .picture-container:hover::before,
     .picture-container:hover::after {
         display: none;
