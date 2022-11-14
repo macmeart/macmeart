@@ -1,27 +1,27 @@
 .gallery.title {
-    color: var(--pink-first);
+    color: var(--red-first);
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
     letter-spacing: 10px;
     font-weight: 300;
-    font-size: 2.5em;
-    padding: 20vh 0 20vh 0;
+    font-size: 2.2em;
+    padding: max(30vh, 100px) 0;
 }
 
 .gallery.title>span {
     padding-left: 10px;
-    border: 2px solid var(--pink-first);
+    border: 2px solid var(--red-first);
     opacity: 0;
     transition: opacity 1s ease-in-out;
 }
 
 section.gallery {
-    scroll-margin-top: calc(var(--header-height) + 20vh + 2.5em + 20px);
+    scroll-margin-top: calc(var(--header-height) + max(30vh, 100px) + 2.2em + 20px);
     display: grid;
     width: 100%;
     padding: 0 2.5vw;
-    grid-template-columns: repeat(5, calc(95vw / 5 - 1vw));
-    grid-auto-rows: calc(95vw / 5 - 1vw);
+    grid-template-columns: repeat(10, calc(95vw / 10 - 1vw));
+    grid-auto-rows: calc(95vw / 10 - 1vw);
     grid-gap: 1vw;
     /*justify-items: stretch;
     align-items: stretch;
@@ -59,7 +59,7 @@ section.gallery {
     z-index: 9;
     color: white;
     text-shadow: 2px 2px 3px black;
-    font-size: 2em;
+    font-size: min(2em, 2.5vw);
     font-weight: bold;
     left: 0;
     position: absolute;
@@ -68,7 +68,7 @@ section.gallery {
 }
 
 .picture-container:hover::before {
-    content: attr(data-descrizione);
+    content: attr(data-titolo);
     top: 33%;
 }
 
@@ -80,39 +80,4 @@ section.gallery {
 .picture.appear,
 .gallery.title>span.appear {
     opacity: 1;
-}
-
-.picture-container.one {
-    grid-column: 1 / 3;
-    grid-row: 1 / 3;
-}
-
-.picture-container.two {
-    grid-column: 4 / 6;
-    grid-row: 1 / 2;
-}
-
-.picture-container.three {
-    grid-column: 3 / 5;
-    grid-row: 3 / 5;
-}
-
-.picture-container.four {
-    grid-column: 5 / 6;
-    grid-row: 5 / 6;
-}
-
-.picture-container.five {
-    grid-column: 1 / 2;
-    grid-row: 4 / 5;
-}
-
-.picture-container.six {
-    grid-column: 2 / 3;
-    grid-row: 6 / 8;
-}
-
-.picture-container.seven {
-    grid-column: 4 / 6;
-    grid-row: 7 / 8;
 }

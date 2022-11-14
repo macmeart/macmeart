@@ -9,6 +9,7 @@
 :root {
     --header-height: 60px;
     --pink-first: #bd7c95;
+    --red-first: #8e0606;
 }
 
 body {
@@ -19,6 +20,14 @@ body {
     /*box-shadow: 10px 50px 100px inset rgba(255, 255, 255, 0.2);*/
 }
 
+body.appear-modal {
+    overflow: hidden;
+}
+
+.language-not-selected {
+    display: none;
+}
+
 header {
     position: sticky;
     top: 0;
@@ -26,36 +35,62 @@ header {
     height: var(--header-height);
     line-height: var(--header-height);
     background-color: black;
-    color: white;
     vertical-align: middle;
-    text-align: center;
+    text-align: end;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 550;
-    letter-spacing: 10px;
     z-index: 99;
     box-shadow: 0 2px 5px rgb(70, 70, 70);
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-header>span {
+header>* {
+    flex-basis: 33.3%;
+    flex-shrink: 1;
+}
+
+header .macmeart {
+    color: var(--red-first);
     cursor: pointer;
+    letter-spacing: 10px;
+    text-align: center;
+}
+
+header .lang-container {
+    color: white;
+    cursor: pointer;
+    font-size: .8em;
+    padding-right: 20px;
+}
+
+header .mini-lang {
+    border-bottom: 2px solid transparent;
+    border-top: 2px solid transparent;
+}
+
+header .mini-lang:hover {
+    color: var(--red-first);
+    cursor: pointer;
+}
+
+header .mini-lang.selected {
+    border-bottom: 2px solid var(--red-first);
 }
 
 #instagram {
     height: 100%;
-    aspect-ratio: 1 / 1;
     display: inline-flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    position: absolute;
-    left: 0;
-    top: 0;
     cursor: pointer;
     color: white;
 }
 
 #instagram>img {
     height: 50%;
-    width: 50%;
+    padding-left: 20px;
     object-fit: scale-down;
     filter: grayscale(.5);
 }
@@ -84,7 +119,7 @@ section.intro-page {
     background-color: transparent;
     padding: 10%;
     justify-content: center;
-    align-content: center;
+    align-items: center;
 }
 
 .intro__info>p {

@@ -1,0 +1,46 @@
+.picture-container.one {
+    grid-area: one;
+}
+
+.picture-container.two {
+    grid-area: two;
+}
+
+.picture-container.three {
+    grid-area: three;
+}
+
+.picture-container.four {
+    grid-area: four;
+}
+
+.picture-container.five {
+    grid-area: five;
+}
+
+.picture-container.six {
+    grid-area: six;
+}
+
+.picture-container.seven {
+    grid-area: seven;
+}
+
+section.gallery {
+    grid-template-areas:
+        "one one one . . . . . . ."
+        "one one one . . two two two two two"
+        "one one one . . two two two two two"
+        ". . . . . two two two two two"
+        ". . . . . . . . . ."
+        ". three three three . . . . . ."
+        ". three three three . . four four four ."
+        ". three three three . . four four four ."
+        ". . . . . . four four four ."
+        ". . five five five . . . . ."
+        ". . five five five . six six . ."
+        ". . . . . . six six . ."
+        "seven seven seven . . . six six . ."
+        "seven seven seven . . . six six . ."
+
+}

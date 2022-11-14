@@ -1,0 +1,204 @@
+.popup.freccia {
+    pointer-events: none;
+    opacity: 0;
+    display: block;
+    z-index: 99;
+    position: fixed;
+    height: 6vh;
+    width: 6vh;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid black;
+    left: 50%;
+    top: 90vh;
+    transform: translateX(-50%) translateY(10vh);
+    transition: all 1s ease-in-out;
+    box-shadow: 0 0 2px #ccc;
+}
+
+.popup.freccia::after {
+    content: '';
+    position: absolute;
+    height: 30%;
+    width: 30%;
+    top: 30%;
+    left: 35%;
+    transform: rotateZ(-45deg) translateX(15%) translateY(-15%);
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
+    animation: 2s updown infinite ease-in-out;
+    animation-delay: 6000ms;
+}
+
+.popup.freccia.show {
+    pointer-events: initial;
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+@keyframes updown {
+    from {
+        transform: rotateZ(-45deg) translateX(15%) translateY(-15%);
+    }
+
+    50% {
+        transform: rotateZ(-45deg) translateX(-15%) translateY(15%);
+    }
+
+    to {
+        transform: rotateZ(-45deg) translateX(15%) translateY(-15%);
+    }
+}
+
+
+
+.picture-modal {
+    visibility: hidden;
+    opacity: 0;
+    z-index: -1;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    transition: all 1s ease-in;
+    display: flex;
+}
+
+.picture-modal.appear-modal {
+    opacity: 1;
+    visibility: visible;
+    z-index: 999;
+    backdrop-filter: blur(5px);
+}
+
+.picture-modal>.picture-modal__picture-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3vw;
+    flex-basis: 0;
+    flex-grow: 3;
+    flex-shrink: 2;
+    min-width: 0;
+}
+
+.picture-modal__picture-container>img {
+    object-fit: scale-down;
+    min-width: 0;
+    min-height: 0;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+.mini-pictures-container {
+    display: flex;
+    justify-content: center;
+    height: max(50px, 5vh);
+    padding-top: 10px;
+    max-width: 100%;
+}
+
+.picture-modal>.picture-modal__picture-container>* {
+    margin-top: auto;
+}
+
+.mini-pictures-container img {
+    max-height: 100%;
+    /*aspect-ratio: 1 / 1;*/
+    margin-inline: 3px;
+    cursor: pointer;
+    object-fit: scale-down;
+    min-width: 0;
+    border-bottom: 3px solid transparent;
+}
+
+.mini-pictures-container>img.selected {
+    border-bottom: 3px solid var(--red-first);
+}
+
+
+.picture-modal__info {
+    display: flex;
+    justify-content: center;
+    margin: 5% 7.5% 5% 2.5%;
+    overflow: auto;
+}
+
+.picture-modal__info>p {
+    color: white;
+    font-size: min(1.3em, 2.5vw);
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.5em;
+    vertical-align: middle;
+    margin: auto 0;
+    position: relative;
+    word-wrap: anywhere;
+}
+
+.picture-modal__info p>* {
+    display: block;
+    text-align: center;
+    width: 100%;
+    line-height: 1.1rem;
+    font-size: 0.85rem;
+}
+
+.picture-modal__info p .titolo {
+    margin-bottom: 10px;
+    padding-inline: 4px;
+    font-size: 1.2em;
+    line-height: 2rem;
+    position: sticky;
+    top: 0;
+    text-align: center;
+    color: var(--red-first);
+    border: 1px solid var(--red-first);
+    background-color: black;
+    /*box-shadow: 0px 1px 3px var(--red-first);*/
+}
+
+.picture-modal__info p .anno {
+    margin-top: 10px;
+}
+
+.picture-modal>.picture-modal__description {
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+    background-color: transparent;
+    overflow: auto;
+}
+
+#x {
+    position: absolute;
+    top: 1vw;
+    right: 1vw;
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--red-first);
+    background-color: transparent;
+    border-radius: 3px;
+    cursor: pointer;
+    box-shadow:
+        0 0 20px var(--red-first),
+        -1px 1px 2px var(--red-first) inset,
+        1px -1px 2px var(--red-first) inset;
+}
+
+#x:after,
+#x:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    border-left: 2px solid var(--red-first);
+    border-radius: 2px;
+}
+
+#x::after {
+    transform: translateX(12px) rotateZ(45deg);
+}
+
+#x:before {
+    transform: translateX(12px) rotateZ(-45deg);
+}
