@@ -1,4 +1,12 @@
-@media all and (max-width:600px) {
+@media all and (max-width:800px) {
+
+    header .lang-container {
+        color: white;
+        cursor: pointer;
+        font-size: .5em;
+        padding-right: 20px;
+    }
+
     .intro-page>section {
         display: inline-flex;
         width: 100%;
@@ -87,7 +95,6 @@
     .gallery.title {
         padding: max(20vh, 100px) 0;
     }
-
 
     .picture:hover {
         transform: scale(1);

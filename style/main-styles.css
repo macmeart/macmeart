@@ -24,6 +24,7 @@ body.appear-modal {
     overflow: hidden;
 }
 
+
 .language-not-selected {
     display: none;
 }
@@ -117,21 +118,27 @@ section.intro-page {
 .intro__info {
     color: white;
     background-color: transparent;
-    padding: 10%;
+    padding: 3%;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    overflow: auto;
 }
 
 .intro__info>p {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: 400;
-    font-size: 1.5em;
+    font-size: 1vw;
     letter-spacing: 2px;
     text-align: center;
-    line-height: 30px;
+    line-height: 20px;
     opacity: 0;
     transform: translateX(-10vh);
     animation: 1.5s slidein ease-in-out forwards;
+}
+
+.intro__info p br{
+    margin-bottom: 10px;
 }
 
 .intro__picture-container {
