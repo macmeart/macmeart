@@ -7,7 +7,7 @@ const picturesDataObj = [
   //   "descrizione-italiano": `descrizione`,
   //   "numero-dettagli": "0",
   //   path: "",
-  //   alt: "There was a problem loading this image. Please reload the page.",
+  //   alt: "Loading",
   // },
   {
     titolo: "Empathy would be the answer",
@@ -21,7 +21,7 @@ const picturesDataObj = [
     "descrizione-italiano": "descrizione",
     "numero-dettagli": "2",
     path: "./pictures/empathy-would-be-the-answer",
-    alt: "There was a problem loading this image. Please reload the page.",
+    alt: "Loading",
   },
   {
     titolo: "The last supper",
@@ -35,7 +35,7 @@ const picturesDataObj = [
     mostra un Cristo di Minjun che ride davanti all'umana miseria e a tutti i suoi falsi valori.`,
     "numero-dettagli": "5",
     path: "./pictures/the-last-supper",
-    alt: "There was a problem loading this image. Please reload the page.",
+    alt: "Loading",
   },
   {
     titolo: "Corruption",
@@ -45,7 +45,7 @@ const picturesDataObj = [
     "descrizione-italiano": "descrizione",
     "numero-dettagli": "6",
     path: "./pictures/corruption",
-    alt: "There was a problem loading this image. Please reload the page.",
+    alt: "Loading",
   },
   {
     titolo: "To the Absurd",
@@ -59,7 +59,7 @@ const picturesDataObj = [
     "descrizione-italiano": `descrizione`,
     "numero-dettagli": "3",
     path: "./pictures/to-the-absurd",
-    alt: "There was a problem loading this image. Please reload the page.",
+    alt: "Loading",
   },
   {
     titolo: "Black rain in Glasgow",
@@ -69,7 +69,7 @@ const picturesDataObj = [
     "descrizione-italiano": "descrizione",
     "numero-dettagli": "0",
     path: "./pictures/black-rain-in-gl",
-    alt: "There was a problem loading this image. Please reload the page.",
+    alt: "Loading",
   },
   {
     titolo: "White city Black city",
@@ -79,7 +79,7 @@ const picturesDataObj = [
     "descrizione-italiano": "descrizione",
     "numero-dettagli": "0",
     path: "./pictures/white-city-black-city",
-    alt: "There was a problem loading this image. Please reload the page.",
+    alt: "Loading",
   },
 ];
 
@@ -90,12 +90,25 @@ picturesDataObj.forEach((picObj, ind) => {
   picObj.class = numbersArr[ind];
   picObj.mainPicturePath = picObj.path + "/main.jpg";
 
+  //crea le mini pictures
   picObj.miniPicturesPaths = [picObj.mainPicturePath];
   let i = +picObj["numero-dettagli"];
   while (i > 0) {
     picObj.miniPicturesPaths.push(`${picObj.path}/detail-${i}.jpg`);
     i--;
   }
+
+  picObj.miniPictures = [];
+  picObj.miniPicturesPaths.forEach((imgSrc, ind) => {
+    let img = document.createElement("img");
+    img.src = imgSrc;
+
+    img.addEventListener("click", (event) => {
+      changeMiniImage(event.target, bigPicture);
+      event.stopPropagation();
+    });
+    picObj.miniPictures.push(img);
+  });
 });
 
 const picturesArray = [];
@@ -125,9 +138,9 @@ picturesDataObj.forEach((picObj) => {
     const modalPicture = document.querySelector(".picture-modal");
     modalPicture.classList.add("appear-modal");
     document.body.classList.add("appear-modal");
-    window.location.hash = "#dettaglio";
+    //window.location.hash = "#dettaglio";
 
-    loadMiniImages(picObj.miniPicturesPaths);
+    loadMiniImages(picObj.miniPictures);
 
     let descrizioneModal = `<span class="titolo">${picObj.titolo || ""}</span>`;
 

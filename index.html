@@ -21,9 +21,8 @@
   <body>
     <a
       id="freccia"
-      onclick="this.classList.remove('show')"
+      onclick="(()=>{this.classList.remove('show');document.querySelector('#gallery').scrollIntoView({behavior:'smooth'}) })()"
       class="popup freccia hidden"
-      href="#gallery"
     ></a>
     <header>
       <a
@@ -33,7 +32,9 @@
         rel="noopener noreferrer"
         ><img src="./pictures/Instagram_logo_2016.png" alt=""
       /></a>
-      <span class="macmeart" onclick="window.location.hash = 'intro-page'"
+      <span
+        class="macmeart"
+        onclick="window.scrollTo({ top: 0, behavior: 'smooth' });"
         >MACMEART</span
       >
       <span class="lang-container"
@@ -98,7 +99,7 @@
     </section>
 
     <section id="contact" class="contact">
-      <span class="email">macmeart@artist.art</span>
+      <span class="email">macmeart@proton.me</span>
     </section>
 
     <div class="picture-modal" id="dettaglio">

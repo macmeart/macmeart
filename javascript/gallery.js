@@ -26,7 +26,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const freccia = document.querySelector("#freccia");
   let frecciaTimeout = setTimeout(() => {
     if (!maiscrollato) return;
-    if (window.location.hash && window.location.hash != "#intro-page") return;
+    //if (window.location.hash && window.location.hash != "#intro-page") return;
     freccia.classList.add("show");
   }, 5000);
 
@@ -54,12 +54,12 @@ function scrollFreccia() {
   document.removeEventListener("scroll", scrollFreccia);
 }
 
-window.addEventListener("hashchange", (event) => {
-  if (event.oldURL.endsWith("#dettaglio")) {
-    document.querySelector(".picture-modal").classList.remove("appear-modal");
-    document.body.classList.remove("appear-modal");
-  }
-});
+// window.addEventListener("hashchange", (event) => {
+//   if (event.oldURL.endsWith("#dettaglio")) {
+//     document.querySelector(".picture-modal").classList.remove("appear-modal");
+//     document.body.classList.remove("appear-modal");
+//   }
+// });
 
 let swipex, swipextemp;
 let bigPicture;
@@ -143,22 +143,16 @@ let dummyMiniImages = [
   "./pictures/picture_6.jpeg",
 ];
 
-function loadMiniImages(miniImagesSrc) {
+function loadMiniImages(miniImages) {
   let container = document.querySelector(".mini-pictures-container");
   container.innerHTML = "";
-  miniImagesSrc.forEach((imgSrc, ind) => {
-    let img = document.createElement("img");
-    img.src = imgSrc;
+  miniImages.forEach((img, ind) => {
 
     if (ind === 0) {
       img.classList.add("selected");
       currentlySelected = img;
     }
 
-    img.addEventListener("click", (event) => {
-      changeMiniImage(event.target, bigPicture);
-      event.stopPropagation();
-    });
     container.appendChild(img);
   });
 }
