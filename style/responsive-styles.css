@@ -47,6 +47,18 @@
     }
   }
 
+  @-webkit-keyframes scrollText {
+    0% {
+      transform: translateY(0);
+    }
+    2% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-110%);
+    }
+  }
+
   .picture-modal {
     flex-direction: column;
     transition: all 0.5s ease-in;
