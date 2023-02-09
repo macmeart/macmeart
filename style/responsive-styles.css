@@ -81,7 +81,7 @@
       filter: brightness(1);
     }
     100% {
-      filter: brightness(0.15);
+      filter: brightness(0.3);
     }
   }
 
