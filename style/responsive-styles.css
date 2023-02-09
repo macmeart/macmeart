@@ -30,7 +30,7 @@
 
     display: inline-flex;
     opacity: 0;
-    animation: scrollText 120s 6s infinite linear, appear 3s 3s forwards;
+    animation: scrollText 120s 9s infinite linear, appear 3s 3s forwards;
     transform: none;
   }
 
@@ -81,7 +81,7 @@
       filter: brightness(1);
     }
     100% {
-      filter: brightness(0.3);
+      filter: brightness(0.5);
     }
   }
 
@@ -90,7 +90,7 @@
       filter: brightness(1);
     }
     100% {
-      filter: brightness(0.3);
+      filter: brightness(0.5);
     }
   }
 
