@@ -151,6 +151,13 @@ section.intro-page {
   margin-bottom: 10px;
 }
 
+.linea-divisoria{
+  height:2px;
+  background-color: whitesmoke;
+  margin: .75rem 1.5rem;
+  border-radius: 2px;
+}
+
 .intro__picture-container {
   overflow: hidden;
 }
