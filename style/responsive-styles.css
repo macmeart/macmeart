@@ -26,20 +26,33 @@
   .intro__info > p {
     font-size: 1.3em;
     font-weight: 500;
-    text-shadow: 1px 1px 2px white;
+    color: whitesmoke;
 
     display: inline-flex;
-    animation: scrollText 120s linear;
-    animation-iteration-count: infinite;
+    opacity: 0;
+    animation: scrollText 120s 6s infinite linear, appear 3s 3s forwards;
     transform: none;
-    opacity: 1;
+  }
+
+  @keyframes appear {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes appear {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 
   @keyframes scrollText {
     0% {
-      transform: translateY(0);
-    }
-    2% {
       transform: translateY(0);
     }
     100% {
@@ -56,6 +69,28 @@
     }
     100% {
       transform: translateY(-110%);
+    }
+  }
+
+  .intro__picture-container {
+    animation: darken 2s 2s forwards;
+  }
+
+  @keyframes darken {
+    0% {
+      filter: brightness(1);
+    }
+    100% {
+      filter: brightness(0.15);
+    }
+  }
+
+  @-webkit-keyframes darken {
+    0% {
+      filter: brightness(1);
+    }
+    100% {
+      filter: brightness(0.15);
     }
   }
 
