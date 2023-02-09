@@ -8,6 +8,13 @@ const picturesDataObj = [
   //   "numero-dettagli": "0",
   //   path: "",
   //   alt: "Loading",
+
+  // // vengono aggiunti con js dopo:
+  // // class:"one",
+  // // mainPicturePath :"",
+  // // miniPicturePaths:[],
+  // // miniPictures:[]
+
   // },
   {
     titolo: "Empathy would be the answer",
@@ -18,7 +25,7 @@ const picturesDataObj = [
     I use different materials and techniques (canvass, paper, oil) ombined with original expedients (such as the use of the anagram) to express the hypocrisy that is leading the human race to its self-destruction.
     
     "Empathy would be the answer" shows the hypocrisy of the leaders and the distance between different worlds, when it would be enough to have an empathic proximity between people to easily aspire to a better world`,
-    "descrizione-italiano": "descrizione",
+    "descrizione-italiano": `descrizione`,
     "numero-dettagli": "2",
     path: "./pictures/empathy-would-be-the-answer",
     alt: "Loading",
@@ -41,8 +48,8 @@ const picturesDataObj = [
     titolo: "Corruption",
     anno: "2021",
     dimensioni: "100 x 100",
-    "descrizione-english": "description",
-    "descrizione-italiano": "descrizione",
+    "descrizione-english": `description`,
+    "descrizione-italiano": `descrizione`,
     "numero-dettagli": "6",
     path: "./pictures/corruption",
     alt: "Loading",
@@ -65,8 +72,18 @@ const picturesDataObj = [
     titolo: "Black rain in Glasgow",
     anno: "2021",
     dimensioni: "100 x 100",
-    "descrizione-english": "description",
-    "descrizione-italiano": "descrizione",
+    "descrizione-english": `description`,
+    "descrizione-italiano": `Glasgow, città oscura e antica e nel contempo città contemporanea e culla di arte e di design. La sua
+    architettura gotica e quella industriale, che hanno plasmato la sua estetica e contribuito alla sua passata
+    buia reputazione, domina la scena con strutture oscure e imponenti, che ritagliano uno skyline in cui si
+    alternano contorni medioevali con linee e spazi disegnati dai mattoni rossi della drammatica rivoluzione
+    industriale.
+    L&#39;atmosfera cupa della città, che si riflette talvolta nelle sue passate scene artistiche, musicali e letterarie,
+    spesso inquietanti, si riflette nelle costruzioni e nelle lapidi della sua necropoli sulla collina, così come negli
+    edifici vittoriani del centro.
+    La pioggia scura non ripulisce Glasgow, ma ne rende più vividi i contrasti, esaltando le disparità e le
+    contraddizioni di una città in bilico tra passato e futuro, tra storia e modernità, tra vecchi pub e nuove
+    cittadelle universitarie, tra vecchie archeologie industriali e nuove scene artistiche e culturali.`,
     "numero-dettagli": "0",
     path: "./pictures/black-rain-in-gl",
     alt: "Loading",
@@ -75,8 +92,12 @@ const picturesDataObj = [
     titolo: "White city Black city",
     anno: "2022",
     dimensioni: "100 x 100",
-    "descrizione-english": "description",
-    "descrizione-italiano": "descrizione",
+    "descrizione-english": `description`,
+    "descrizione-italiano": `Palazzi che poggiano incerte fondamenta sulla sofferenza, la discriminazione, l’ignoranza e la povertà.
+    Una vita inferiore, criminale, malata.
+    Palazzi che poggiano le fondamenta sull’oro delle rapine legalizzate della finanza; bellezza chirurgica,
+    educazione da web, onestà disonesta, felicità di plastica, segregazione comoda.
+    Per entrambi un futuro incerto.`,
     "numero-dettagli": "0",
     path: "./pictures/white-city-black-city",
     alt: "Loading",
@@ -159,4 +180,25 @@ picturesDataObj.forEach((picObj) => {
     const modalPictureDescription = document.querySelector(".picture-modal p");
     modalPictureDescription.innerHTML = descrizioneModal;
   });
+});
+
+//evita che le immagini si ingrandiscano sull'hover se stai scrollando
+let staScrollando = false;
+document.addEventListener("scroll", () => {
+  if (!staScrollando) {
+    staScrollando = true;
+    setTimeout(() => {
+      staScrollando = false;
+      setTimeout(() => {
+        if (!staScrollando) {
+          picturesArray.forEach((pic) => {
+            pic.classList.remove("hover-static");
+          });
+        }
+      }, 100);
+    }, 200);
+    picturesArray.forEach((pic) => {
+      pic.classList.add("hover-static");
+    });
+  }
 });

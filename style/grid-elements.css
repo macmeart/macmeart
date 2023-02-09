@@ -1,32 +1,51 @@
 .picture-container.one {
-    grid-area: one;
+  grid-area: one;
 }
 
 .picture-container.two {
-    grid-area: two;
+  grid-area: two;
 }
 
 .picture-container.three {
-    grid-area: three;
+  grid-area: three;
 }
 
 .picture-container.four {
-    grid-area: four;
+  grid-area: four;
 }
 
 .picture-container.five {
-    grid-area: five;
+  object-position: 50% 20%;
+  grid-area: five;
 }
 
 .picture-container.six {
-    grid-area: six;
+  grid-area: six;
 }
 
 .picture-container.seven {
-    grid-area: seven;
+  grid-area: seven;
 }
 
-section.gallery {
+/*section.gallery {
+    grid-template-areas:
+        ". . . . . . . . . ."
+        ". . . . . . . . . ."
+        ". . . . . . . . . ."
+        ". . . . . . . . . ."
+        ". . . . . . . . . ."
+        ". . . . . . . . . ."
+        ". . . . . . . . . ."
+        ". . . . . . . . . ."
+        ". . . . . . . . . ."
+        ". . . . . . . . . ."
+        ". . . . . . . . . ."
+        ". . . . . . . . . ."
+        ". . . . . . . . . ."
+        ". . . . . . . . . ."
+}*/
+
+/* section.gallery {
     grid-template-areas:
         "one one one . . . . . . ."
         "one one one . . two two two two two"
@@ -43,4 +62,56 @@ section.gallery {
         "seven seven seven . . . six six . ."
         "seven seven seven . . . six six . ."
 
+} */
+
+section.gallery {
+  scroll-margin-top: calc(
+    var(--header-height) + max(30vh, 100px) + 2.2em + 20px
+  );
+  display: grid;
+  width: 100%;
+  padding: 0 0.5vw;
+  grid-template-columns: repeat(15, calc(95vw / 15 - 1vw));
+  grid-auto-rows: calc(95vw / 15 - 1vw);
+  grid-gap: 1vw;
+  /*justify-items: stretch;
+    align-items: stretch;
+    justify-content: space-evenly;
+    align-content: space-evenly;*/
+}
+
+/*". . . . . . . . . . . . . . . "*/
+section.gallery {
+  grid-template-areas:
+    ". two two two two two two two two two two two two two ."
+    ". two two two two two two two two two two two two two ."
+    ". two two two two two two two two two two two two two ."
+    ". two two two two two two two two two two two two two ."
+    ". . . . . . . . . . . . . . ."
+    ". . . . . . . . . . . . . . ."
+    ". . one one one one one . . . . . . . ."
+    ". . one one one one one . . . . . . . ."
+    ". . one one one one one . four four four four four four ."
+    ". . one one one one one . four four four four four four ."
+    ". . one one one one one . four four four four four four ."
+    ". . . . . . . . four four four four four four ."
+    ". . . . . . . . four four four four four four ."
+    ". . . . . . . . four four four four four four ."
+    ". six six six . . . . . . . . . . ."
+    ". six six six . . . . . . . . . . ."
+    ". six six six . . . three three three three three three three ."
+    ". six six six . . . three three three three three three three ."
+    ". six six six . . . three three three three three three three ."
+    ". six six six . . . three three three three three three three ."
+    ". six six six . . . three three three three three three three ."
+    ". six six six . . . three three three three three three three ."
+    ". six six six . . . three three three three three three three ."
+    ". six six six . . . . . . . . . . ."
+    ". six six six . . . . . . . . . . . "
+    ". . . . . . . . . . . . . . ."
+    ". . . . . . . . . . . . . . ."
+    ". . five five five five five five five five five five five . . "
+    ". . five five five five five five five five five five five . . "
+    ". . five five five five five five five five five five five . . "
+    ". . five five five five five five five five five five five . . ";
 }

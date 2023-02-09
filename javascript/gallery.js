@@ -1,6 +1,6 @@
 window.addEventListener("DOMContentLoaded", () => {
   const gallery = document.querySelector("#gallery");
-  picturesArray.forEach(pic =>{
+  picturesArray.forEach((pic) => {
     gallery.append(pic);
   });
 
@@ -83,14 +83,25 @@ window.addEventListener("DOMContentLoaded", () => {
   const modalPictureDescription = document.querySelector(".picture-modal p");
 
   //swipe functionality of picture modal
-
+  let isZooming = 0;
   modalPictureContainer.addEventListener("touchstart", (event) => {
     swipex = event.touches[0].clientX;
+    if (event.touches.length > 1) {
+      isZooming = 99;
+    }
+    ì;
   });
   modalPictureContainer.addEventListener("touchmove", (event) => {
     swipextemp = event.touches[event.touches.length - 1]?.clientX;
   });
   modalPictureContainer.addEventListener("touchend", (event) => {
+    if (isZooming == 99) {
+      setTimeout(() => {
+        isZooming = 0;
+      }, 400);
+      return;
+    }
+
     let keydown = new Event("keydown", { bubbles: true });
     if (swipex - swipextemp < -80) {
       keydown.key = "ArrowLeft";
@@ -133,24 +144,25 @@ function changeLanguage(lang) {
   }
 }
 
-let currentlySelected;
-let dummyMiniImages = [
-  "./pictures/picture_1.jpg",
-  "./pictures/picture_2.jpg",
-  "./pictures/picture_3.jpg",
-  "./pictures/picture_4.jpg",
-  "./pictures/picture_5.jpeg",
-  "./pictures/picture_6.jpeg",
-];
+// let dummyMiniImages = [
+//   "./pictures/picture_1.jpg",
+//   "./pictures/picture_2.jpg",
+//   "./pictures/picture_3.jpg",
+//   "./pictures/picture_4.jpg",
+//   "./pictures/picture_5.jpeg",
+//   "./pictures/picture_6.jpeg",
+// ];
 
+let currentlySelected;
 function loadMiniImages(miniImages) {
   let container = document.querySelector(".mini-pictures-container");
   container.innerHTML = "";
   miniImages.forEach((img, ind) => {
-
     if (ind === 0) {
       img.classList.add("selected");
       currentlySelected = img;
+    } else {
+      img.classList.remove("selected");
     }
 
     container.appendChild(img);
