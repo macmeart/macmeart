@@ -3776,11 +3776,11 @@ const Al = {
       );
     },
   },
-  Ml = "/macmeart/paintings/black-rain-in-gl/main.jpg",
-  Ol = "/macmeart/paintings/corruption/main.jpg",
-  $l = "/macmeart/paintings/empathy-would-be-the-answer/main.jpg",
-  Fl = "/macmeart/paintings/to-the-absurd/main.jpg",
-  zl = "/macmeart/paintings/the-last-supper/main.jpg";
+  Ml = "/paintings/black-rain-in-gl/main.jpg",
+  Ol = "/paintings/corruption/main.jpg",
+  $l = "/paintings/empathy-would-be-the-answer/main.jpg",
+  Fl = "/paintings/to-the-absurd/main.jpg",
+  zl = "/paintings/the-last-supper/main.jpg";
 const hn = (e, t) => {
     const n = e.__vccOpts || e;
     for (const [i, s] of t) n[i] = s;
@@ -3906,7 +3906,7 @@ const hn = (e, t) => {
     },
   },
   jl = hn(Nl, [["__scopeId", "data-v-595e311c"]]),
-  qs = "/macmeart/paintings/profile/main.jpg",
+  qs = "/paintings/profile/main.jpg",
   Rl = {
     class: "flex flex-col items-center justify-center min-h-screen",
     id: "statement",
@@ -4030,7 +4030,7 @@ const hn = (e, t) => {
     "Empathy would be the answer" shows the hypocrisy of the leaders and the distance between different worlds, when it would be enough to have an empathic proximity between people to easily aspire to a better world`,
       descrizioneItaliano: "descrizione",
       numeroDettagli: 2,
-      path: "/macmeart/paintings/empathy-would-be-the-answer",
+      path: "/paintings/empathy-would-be-the-answer",
       centratura: "50% 50%",
       alt: "Loading",
       materialiItaliano: "Giornali e pittura su tela",
@@ -4047,7 +4047,7 @@ const hn = (e, t) => {
     Uso materiali e tecniche già viste nei lavori di importanti artisti italiani del secolo scroso (i.e. Emilio Vedova) combinati ad originali espedienti (come l'uso di anagrammi) per esprimere sarcasticamente l'ipocrisia che sta trascinando l'essere umano alla sua autodistruzione. &quot;The Last Supper (masquerade)&quot;
     mostra un Cristo di Minjun che ride davanti all'umana miseria e a tutti i suoi falsi valori.`,
       numeroDettagli: 5,
-      path: "/macmeart/paintings/the-last-supper",
+      path: "/paintings/the-last-supper",
       centratura: "50% 50%",
       alt: "Loading",
       materialiItaliano: "Giornali e pittura su tela",
@@ -4060,7 +4060,7 @@ const hn = (e, t) => {
       descrizioneEnglish: "description",
       descrizioneItaliano: "descrizione",
       numeroDettagli: 6,
-      path: "/macmeart/paintings/corruption",
+      path: "/paintings/corruption",
       centratura: "50% 50%",
       alt: "Loading",
       materialiItaliano: "Giornali e pittura su tela",
@@ -4077,7 +4077,7 @@ const hn = (e, t) => {
     "To the Absurd" shows the enormous distance between people, often running towards false myths`,
       descrizioneItaliano: "descrizione",
       numeroDettagli: 3,
-      path: "/macmeart/paintings/to-the-absurd",
+      path: "/paintings/to-the-absurd",
       centratura: "50% 50%",
       alt: "Loading",
       materialiItaliano: "Giornali e pittura su tela",
@@ -4100,7 +4100,7 @@ const hn = (e, t) => {
     contraddizioni di una città in bilico tra passato e futuro, tra storia e modernità, tra vecchi pub e nuove
     cittadelle universitarie, tra vecchie archeologie industriali e nuove scene artistiche e culturali.`,
       numeroDettagli: 0,
-      path: "/macmeart/paintings/black-rain-in-gl",
+      path: "/paintings/black-rain-in-gl",
       centratura: "20% 80%",
       alt: "Loading",
       materialiItaliano: "Pittura su tela",
@@ -4117,7 +4117,7 @@ const hn = (e, t) => {
     educazione da web, onestà disonesta, felicità di plastica, segregazione comoda.
     Per entrambi un futuro incerto.`,
       numeroDettagli: 0,
-      path: "/macmeart/paintings/white-city-black-city",
+      path: "/paintings/white-city-black-city",
       centratura: "10% 50%",
       alt: "Loading",
       materialiItaliano: "Pittura su tela",
@@ -4444,19 +4444,19 @@ const Ma = {
         window.history.pushState(
           null,
           null,
-          "/macmeart/" + n.picture.titolo.split(" ").join("-")
+          n.picture.titolo.split(" ").join("-")
         );
       }
       function o() {
-        window.history.replaceState(null, null, "/macmeart");
+        window.history.replaceState(null, null, "");
       }
       return (
         cn(() => {
           window.addEventListener("popstate", () => {
             (n.visible = !1),
-              window.history.replaceState(null, null, "/macmeart");
+              window.history.replaceState(null, null, "");
           }),
-            window.history.replaceState(null, null, "/macmeart");
+            window.history.replaceState(null, null, "");
         }),
         (r, l) => {
           var c, f;
