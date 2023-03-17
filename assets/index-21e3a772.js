@@ -4410,14 +4410,14 @@ const Ma = {
         );
       }
       function o() {
-        window.history.replaceState(null, null, "/");
+        window.history.replaceState(null, null, "/macmeart");
       }
       return (
         ei(() => {
           window.addEventListener("popstate", () => {
-            (n.visible = !1), window.history.replaceState(null, null, "/");
+            (n.visible = !1), window.history.replaceState(null, null, "/macmeart");
           }),
-            window.history.replaceState(null, null, "/");
+            window.history.replaceState(null, null, "/macmeart");
         }),
         (r, l) => {
           var c, f;
