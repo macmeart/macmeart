@@ -4448,15 +4448,15 @@ const Ma = {
         );
       }
       function o() {
-        window.history.replaceState(null, null, "");
+        window.history.replaceState(null, null, "/");
       }
       return (
         cn(() => {
           window.addEventListener("popstate", () => {
             (n.visible = !1),
-              window.history.replaceState(null, null, "");
+              window.history.replaceState(null, null, "/");
           }),
-            window.history.replaceState(null, null, "");
+            window.history.replaceState(null, null, "/");
         }),
         (r, l) => {
           var c, f;
