@@ -4406,7 +4406,7 @@ const Ma = {
         window.history.pushState(
           null,
           null,
-          n.picture.titolo.split(" ").join("-")
+          "/macmeart/" + n.picture.titolo.split(" ").join("-")
         );
       }
       function o() {
@@ -4415,7 +4415,8 @@ const Ma = {
       return (
         ei(() => {
           window.addEventListener("popstate", () => {
-            (n.visible = !1), window.history.replaceState(null, null, "/macmeart");
+            (n.visible = !1),
+              window.history.replaceState(null, null, "/macmeart");
           }),
             window.history.replaceState(null, null, "/macmeart");
         }),
